@@ -1,9 +1,5 @@
 -- hotkey-context=script-only
 
-if julti.isCustomizing() then
-    return
-end
-
 if not julti.scriptExists("Benchmark Until Warm") then
     julti.showMessageBox("This script requires the \"Benchmark Until Warm\" script!")
     return
