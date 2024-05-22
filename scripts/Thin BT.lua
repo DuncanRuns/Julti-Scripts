@@ -24,6 +24,6 @@ if julti.isCustomizing() then
     return
 end
 
-local width = toNumberOrElse(julti.getCustomizable("width", "250"), 384)
-local height = toNumberOrElse(julti.getCustomizable("height", "750"), 16384)
+local width = toNumberOrElse(julti.getCustomizable("width", "250"), 250)
+local height = toNumberOrElse(julti.getCustomizable("height", "750"), 750)
 moveresize.toggleResize(julti.getSelectedInstanceNum(), width, height, false)
