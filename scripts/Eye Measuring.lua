@@ -53,7 +53,18 @@ local useCursorSpeed = "true" == julti.getCustomizable("useCursorSpeed", "true")
 
 local i = julti.getSelectedInstanceNum()
 if i == 0 then
-    julti.log("No instance activate, can't run script!")
+    julti.log("No instance activate, can't run eye measuring script!")
+    return
+end
+
+if julti.getInstanceState(i) ~= "INWORLD" then
+    julti.log("Instance is not in a world, eye measuring script cancelled!")
+    return
+end
+
+if julti.getInstanceInWorldState(i) == "GAMESCREENOPEN" then
+    julti.log("Chat or inventory is open, cancelling eye measuring script!")
+    return
 end
 
 local stretching = moveresize.toggleResize(i, width, height, useEyeSee)
