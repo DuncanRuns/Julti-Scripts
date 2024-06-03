@@ -57,14 +57,16 @@ if i == 0 then
     return
 end
 
-if julti.getInstanceState(i) ~= "INWORLD" then
-    julti.log("Instance is not in a world, eye measuring script cancelled!")
-    return
-end
+if julti.hasFabricMod(i, "state-output") then
+    if julti.getInstanceState(i) ~= "INWORLD" then
+        julti.log("Instance is not in a world, eye measuring script cancelled!")
+        return
+    end
 
-if julti.getInstanceInWorldState(i) == "GAMESCREENOPEN" then
-    julti.log("Chat or inventory is open, cancelling eye measuring script!")
-    return
+    if julti.getInstanceInWorldState(i) == "GAMESCREENOPEN" then
+        julti.log("Chat or inventory is open, cancelling eye measuring script!")
+        return
+    end
 end
 
 local stretching = moveresize.toggleResize(i, width, height, useEyeSee)
