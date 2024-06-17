@@ -1,0 +1,13 @@
+{
+    "scripts": [
+        "Benchmark Until Warm.lua",
+        "End Benchmark.lua",
+        "Eye Measuring.lua",
+        "Launch + Benchmark.lua",
+        "Planar Abuse.lua",
+        "Reset Before 20s.lua",
+        "Start Benchmark.lua",
+        "Start Coping.lua",
+        "Thin BT.lua"
+    ]
+}
